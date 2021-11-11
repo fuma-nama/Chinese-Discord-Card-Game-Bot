@@ -14,14 +14,13 @@ public class Inventory {
     public static final CardReturner[] ALL_CARDS = {
             還是不能色色::new,
             不可以色色::new,
-            不可以色色::new,
             強制bonk::new,
             可以色色::new,
+            不可以色色2::new,
             絕對可以色色::new,
             我的很大你忍一下::new,
             熱狗::new,
             汽車後座擠4個人::new,
-            不可以色色2::new,
             新版不可以色色::new,
             //窩就色色 is same as 絕對可以色色, it will be removed soon
     };
