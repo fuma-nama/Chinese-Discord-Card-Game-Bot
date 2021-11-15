@@ -9,6 +9,9 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 
 import javax.security.auth.login.LoginException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class StartUpThread extends ListenerAdapter
 {
@@ -33,7 +36,16 @@ public class StartUpThread extends ListenerAdapter
         servers("684766026776576052", "676806725105352704");
     }};
 
-    private static final String Token = "OTA3OTU1NzgxOTcyOTE4Mjgz.YYuttw.13wzHmzqjjUZPoeGE6IiZ8DI8zs";
+    //Token
+    private static final String Token = readToken();
+
+    private static String readToken() {
+        try {
+            return Files.readString(Path.of("token"));
+        } catch (IOException e) {
+            return "";
+        }
+    }
 
     public static void main(String[] args) throws LoginException, InterruptedException {
         JDA jda = JDABuilder.createDefault(Token)
