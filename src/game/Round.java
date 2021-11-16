@@ -115,7 +115,7 @@ public class Round {
             event.reply("Error: NO_CARD_FOUND").setEphemeral(true).queue();
             return;
         }
-        boolean newCard = new Random().nextBoolean();
+        boolean newCard = getRandomBoolean();
         MessageEmbed message = new EmbedBuilder()
                 .setTitle(event.getUser().getName() + "選擇了扔卡")
                 .setDescription(event.getUser().getAsMention() + "扔掉了\"" + player.inventory.cards[id].name() + "\" (ID: " + id + ")"
@@ -125,6 +125,10 @@ public class Round {
                 .build();
         player.inventory.cards[id] = newCard? player.randomCard(players) : null;
         switchTurn(event, message);
+    }
+
+    private static boolean getRandomBoolean() {
+        return Math.random() < 0.7;
     }
 
     public void getStatus(SlashCommandEvent event) {
