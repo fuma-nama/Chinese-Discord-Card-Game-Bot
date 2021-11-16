@@ -115,7 +115,7 @@ public class Round {
             event.reply("Error: NO_CARD_FOUND").setEphemeral(true).queue();
             return;
         }
-        boolean newCard = getRandomBoolean(); //70% you can get a new card
+        boolean newCard = getRandomBoolean(); //70% you can get the new card
         MessageEmbed message = new EmbedBuilder()
                 .setTitle(event.getUser().getName() + "選擇了扔卡")
                 .setDescription(event.getUser().getAsMention() + "扔掉了\"" + player.inventory.cards[id].name() + "\" (ID: " + id + ")"
